@@ -6,10 +6,9 @@ public class Calculator {
 
     private Calculator() {
     }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Multiplication multiplication = new Multiplication();
-        Division division = new Division();
         Addition addition = new Addition();
         Subtraction subtraction = new Subtraction();
 
@@ -27,8 +26,6 @@ public class Calculator {
             double result = switch (op) {
                 case '+' -> addition.add(a, b);
                 case '-' -> subtraction.subtract(a, b);
-                case '*' -> multiplication.multiply(a, b);
-                case '/' -> division.divide(a, b);
                 default -> throw new IllegalArgumentException("Invalid operator");
             };
             System.out.println("Result: " + result);

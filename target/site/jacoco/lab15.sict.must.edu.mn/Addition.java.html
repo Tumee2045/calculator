@@ -2,7 +2,13 @@
 
 <span class="fc" id="L3">public class Addition {</span>
     public double add(double a, double b) {
-<span class="fc" id="L5">        return a + b;</span>
+<span class="fc bfc" id="L5" title="All 2 branches covered.">        if (a == 0) {</span>
+<span class="fc" id="L6">            return b;</span>
+<span class="fc bfc" id="L7" title="All 2 branches covered.">        } else if (b == 0) {</span>
+<span class="fc" id="L8">            return a;</span>
+        } else {
+<span class="fc" id="L10">            return a + b;</span>
+        }
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
