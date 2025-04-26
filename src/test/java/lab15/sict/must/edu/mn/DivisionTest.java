@@ -13,6 +13,13 @@ public class DivisionTest {
     }
 
     @Test
+    void testDivideByNearZero() {
+        // Test case for dividing by near-zero value
+        Division division = new Division();
+        assertThrows(IllegalArgumentException.class, () -> division.divide(5, 1e-11));
+    }
+
+    @Test
     void testDivideZero() {
         // Test case where numerator is zero
         Division division = new Division();
