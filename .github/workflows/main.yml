@@ -27,7 +27,7 @@ jobs:
         run: mvn checkstyle:check
 
       - name: Run Tests and Check Coverage
-        run: mvn test jacoco:check
+        run: mvn verify
 
       - name: Generate Coverage Report
         run: mvn jacoco:report
