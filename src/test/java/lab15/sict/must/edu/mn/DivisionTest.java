@@ -13,4 +13,9 @@ public class DivisionTest {
         Division calc = new Division();
         assertThrows(IllegalArgumentException.class, () -> calc.divide(4.0, 0.0), "Division by zero should throw exception");
     }
+    @Test
+    void testDivideInfiniteResult() {
+        Division calc = new Division();
+        assertThrows(IllegalArgumentException.class, () -> calc.divide(Double.MAX_VALUE, 1e-310), "Should throw exception for non-finite result");
+    }
 }

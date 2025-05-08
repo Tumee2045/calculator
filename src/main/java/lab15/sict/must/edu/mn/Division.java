@@ -4,6 +4,10 @@ public class Division {
         if (b == 0) {
             throw new IllegalArgumentException("Cannot divide by zero");
         }
-        return a / b;
+        double result = a / b;
+        if (Double.isNaN(result) || Double.isInfinite(result)) {
+            throw new IllegalArgumentException("Result is not a finite number");
+        }
+        return result;
     }
 }
