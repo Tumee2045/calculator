@@ -3,22 +3,21 @@ package lab15.sict.must.edu.mn;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class CalculatorTest {
+class CalculatorTest {
+
+    private final Calculator calculator = new Calculator();
+
     @Test
-    void testMultiply() {
-        Calculator calc = new Calculator();
-        assertEquals(6.0, calc.multiply(2.0, 3.0));
+    void testAdd() {
+        assertEquals(5.0, calculator.add(2.0, 3.0));
+        assertEquals(0.0, calculator.add(-2.0, 2.0));
+        assertEquals(-5.0, calculator.add(-2.0, -3.0));
     }
 
     @Test
-    void testDivide() {
-        Calculator calc = new Calculator();
-        assertEquals(2.0, calc.divide(6.0, 3.0));
-    }
-
-    @Test
-    void testDivideByZero() {
-        Calculator calc = new Calculator();
-        assertThrows(IllegalArgumentException.class, () -> calc.divide(4.0, 0.0));
+    void testSubtract() {
+        assertEquals(1.0, calculator.subtract(5.0, 4.0));
+        assertEquals(-4.0, calculator.subtract(2.0, 6.0));
+        assertEquals(0.0, calculator.subtract(3.0, 3.0));
     }
 }
